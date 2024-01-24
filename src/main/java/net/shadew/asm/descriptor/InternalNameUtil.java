@@ -1,8 +1,8 @@
 package net.shadew.asm.descriptor;
 
-import java.util.regex.Pattern;
-
 import net.shadew.util.contract.Validate;
+
+import java.util.regex.Pattern;
 
 public final class InternalNameUtil {
     private static final Pattern VALID_CLASS_PATTERN = Pattern.compile("^(?:[a-zA-Z$_][a-zA-Z0-9$_]*?/)*[a-zA-Z$_][a-zA-Z0-9$_]*?(?:\\$[a-zA-Z0-9_]+?)*$");

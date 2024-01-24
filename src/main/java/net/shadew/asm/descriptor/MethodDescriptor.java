@@ -1,13 +1,11 @@
 package net.shadew.asm.descriptor;
 
-import org.objectweb.asm.Type;
+import net.shadew.util.contract.Validate;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import net.shadew.util.contract.Validate;
 
 public final class MethodDescriptor extends Descriptor {
     private final TypeDescriptor[] parameters;
@@ -85,16 +83,6 @@ public final class MethodDescriptor extends Descriptor {
             parameters().map(Descriptor::toString).collect(Collectors.joining()),
             returnType.toString()
         );
-    }
-
-    @Override
-    public Type toAsm() {
-        int len = parameters.length;
-        Type[] args = new Type[len];
-        for (int i = 0; i < len; i++) {
-            args[i] = parameters[i].toAsm();
-        }
-        return Type.getMethodType(returnType.toAsm(), args);
     }
 
     @Override

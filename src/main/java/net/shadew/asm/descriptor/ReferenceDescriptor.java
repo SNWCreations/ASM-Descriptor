@@ -1,7 +1,5 @@
 package net.shadew.asm.descriptor;
 
-import org.objectweb.asm.Type;
-
 import net.shadew.util.contract.Validate;
 
 public final class ReferenceDescriptor extends TypeDescriptor {
@@ -24,11 +22,6 @@ public final class ReferenceDescriptor extends TypeDescriptor {
     @Override
     public String toString() {
         return "L" + internalName + ";";
-    }
-
-    @Override
-    public Type toAsm() {
-        return Type.getObjectType(internalName);
     }
 
     @Override

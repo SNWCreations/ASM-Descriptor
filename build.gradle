@@ -42,14 +42,4 @@ publishing {
             artifact tasks.sourceJar
         }
     }
-    repositories {
-        maven {
-            name = "ShwMaven"
-            url = uri( "http://maven.shadew.net/" )
-            credentials {
-                username = shwMavenUser
-                password = shwMavenPass
-            }
-        }
-    }
 }
